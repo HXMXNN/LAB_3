@@ -57,7 +57,6 @@ void processUserInput() {
         enqueue(q, numbers[i]);
     }
 
-    // Запись исходного массива в файл
     writeArrayToFile(INPUT_FILE, numbers, n);
     printf("Исходный массив записан в '%s'\n", INPUT_FILE);
 
