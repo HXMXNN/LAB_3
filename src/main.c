@@ -59,6 +59,7 @@ void processUserInput() {
 
     writeArrayToFile(INPUT_FILE, numbers, n);
     printf("Исходный массив записан в '%s'\n", INPUT_FILE);
+    
 
 
     int *arr = (int*)malloc(n * sizeof(int));
