@@ -9,7 +9,7 @@ void swap(int *a, int *b) {
     *b = temp;
 }
 
-void selectionSort(int arr[], int n) {
+void selectionSort(int *arr, int n) {
     for (int i = 0; i < n - 1; i++) {
         int minIdx = i;
         for (int j = i + 1; j < n; j++) {
@@ -21,7 +21,7 @@ void selectionSort(int arr[], int n) {
     }
 }
 
-void quickSort(int arr[], int first, int last) {
+void quickSort(int *arr, int first, int last) {
     if (first >= last) return;
 
     int pivot = arr[(first + last) / 2];
@@ -41,7 +41,7 @@ void quickSort(int arr[], int first, int last) {
     if (i < last) quickSort(arr, i, last);
 }
 
-void compareSorts(int arr[], int n) {
+void compareSorts(int *arr, int n) {
     int *copy1 = (int*)malloc(n * sizeof(int));
     int *copy2 = (int*)malloc(n * sizeof(int));
 
@@ -52,13 +52,10 @@ void compareSorts(int arr[], int n) {
 
     clock_t start, end;
 
-
-
     start = clock();
     selectionSort(copy1, n);
     end = clock();
     double time_selection = ((double)(end - start)) / CLOCKS_PER_SEC;
-
 
 
     start = clock();
@@ -68,8 +65,8 @@ void compareSorts(int arr[], int n) {
 
     printf("\n=== Сравнение алгоритмов сортировки ===\n");
     printf("Количество элементов: %d\n", n);
-    printf("Время сортировки прямым выбором: %.6f сек\n", time_selection);
-    printf("Время быстрой сортировки: %.6f сек\n", time_quick);
+    printf("Время сортировки прямым выбором: %.10f сек\n", time_selection);
+    printf("Время быстрой сортировки: %.10f сек\n", time_quick);
 
     if (time_selection > 0) {
         printf("Быстрая сортировка быстрее в %.2f раз\n",
