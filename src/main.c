@@ -28,6 +28,7 @@ void printArray(int *arr, int n) {
         }
     } else {
         printf("Элементы массива: ");
+        
         for (int i = 0; i < n; i++) {
             printf("%d ", arr[i]);
         }
